@@ -1,7 +1,9 @@
-import factoryClasss.FoodFactory;
+import factory.FoodFactory;
 import product.commonProduct.FoodList;
 
 public class MyFoodService {
+    
+
     public static void main(String[] args) {
         
         FoodFactory foodType = new FoodFactory();

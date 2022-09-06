@@ -23,13 +23,8 @@ A resturant can have different menus, and in future other list can be added.
 
 ### Solution : 
 
- 1. Create an `common product / product` i.e. `interface` with having basic functionality that you want to have
- 2. Create a `concrete product` i.e. `implementing` class/ abstract class, for specific product group like Indian or Chines
- 3. Create a `creator` class to declare a `factory method` or `client code` which will have a object of `concrete product`
- 4. 
-## Steps
-
-### Step 1 : Create Common Interface
+### Step 1 : Common Interface
+Create an `common product / product` i.e. `interface` with having basic functionality that you want to have
 
 ```
 public interface FoodList {
@@ -38,6 +33,7 @@ public interface FoodList {
 ```
 
 ### Step 2 : Create Concrete class and implement the interface
+Create a `concrete product` i.e. `implementing` class/ abstract class, for specific product group like Indian or Chines
 
 ```
 public class ChinesFood implements FoodList {
@@ -64,7 +60,9 @@ public void FoodType() {
 ```
 
 ### Step 3: Create a ` Factory ` to generate object of concrete class
-
+The `creator class` declares the `factory method` , which returns the new product object which matches the `product interface`
+    - Can declare factory method `abstract` : To force all subclasses to implement their own versions of the method. 
+    - Creator class generally has some `business logic` related to product classes
 ```
 
 public class FoodFactory {
@@ -84,7 +82,7 @@ public class FoodFactory {
 ```
 
 ### Step 4 Create `Service` to use the Factory to get the object of concrete class by passing information 
-
+`concrete creator` will override the base factory method, to return different type of product
 ```
 public class MyFoodService {
     public static void main(String[] args) {
